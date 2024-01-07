@@ -2,7 +2,8 @@
 using Discount.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using System.Xml.Linq;
+using VaultSharp;
+using VaultSharp.V1.Commons;
 
 namespace Discount.API.Controllers
 {
@@ -21,6 +22,7 @@ namespace Discount.API.Controllers
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<List<Coupon>>> GetAllDiscount()
         {
+
             var coupons = await _repository.GetAllDiscount();
             return Ok(coupons);
         }
