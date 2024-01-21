@@ -2,11 +2,13 @@
 using Movies.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Movies.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Authorize("ClientIdPolicy")]
+    [Route("api/[controller]")]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieRepository _repository;
