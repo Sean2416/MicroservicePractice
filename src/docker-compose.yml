@@ -37,6 +37,12 @@ services:
     build:
       context: .
       dockerfile: Services/Discount/Discount.API/Dockerfile
+      
+  movie.api:
+    image: ${DOCKER_REGISTRY-}movieapi
+    build:
+      context: .
+      dockerfile: Services/Movies/Movies.API/Dockerfile
 
 volumes:
   mongo_data:

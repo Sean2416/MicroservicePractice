@@ -10,3 +10,7 @@ src/Services/Discount/Discount.API/bin/
 src/Services/Discount/Discount.API/obj/
 
 src/Services/Catalog/Catalog.API/obj/
+
+src/Services/Movies/Movies.API/bin/
+
+src/Services/Movies/Movies.API/obj/

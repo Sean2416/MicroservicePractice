@@ -87,3 +87,12 @@ services:
       - discountdb
     ports:
       - "8002:80"
+      
+  movie.api:
+    container_name: movie.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Stage
+    depends_on:
+      - discountms
+    ports:
+      - "8003:80"
