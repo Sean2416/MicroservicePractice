@@ -22,11 +22,43 @@ namespace IdentityServer
                 },
                 new Client
                 {
-                    ClientId="TestClient",
-                    AllowedGrantTypes=GrantTypes.ClientCredentials,
-                    ClientSecrets={new Secret("testSecret".Sha256())},
-                    AllowedScopes={ "None" }
+                    ClientId = "movies_mvc_client",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("clientsecret".Sha256())
+                    },
+                    ClientName = "Movies MVC Web App",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowRememberConsent=true,
+                    RedirectUris = new List<string>()
+                    {
+                        "https://localhost:5002/signin-oidc"
+                    },
+                    PostLogoutRedirectUris = new List<string>()
+                    {
+                        "https://localhost:5002/signout-callback-oidc"
+                    },
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "roles",
+                        "MovieAPI"
+                    }
                 }
+            };
+
+        public static IEnumerable<IdentityResource> IdentityResources =>
+            new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
+                new IdentityResources.Address(),
+                new IdentityResources.Email(),
+                new IdentityResource("roles","Your role(s)", new List<string>(){ "role" })
             };
 
         //定義Client可使用的Scope
@@ -43,16 +75,6 @@ namespace IdentityServer
                 //new ApiResource("roles", "Your role(s)", new[] { "role" })
             };
 
-        public static IEnumerable<IdentityResource> IdentityResources =>
-            new List<IdentityResource>
-            {
-                new IdentityResources.OpenId(),
-                new IdentityResources.Profile(),
-                new IdentityResources.Address(),
-                new IdentityResources.Email(),
-                new IdentityResource("roles","Your role(s)", new List<string>(){ "role" })
-            };
-
         public static List<TestUser> TestUsers =>
             new List<TestUser>
             {
@@ -63,8 +85,21 @@ namespace IdentityServer
                     Password = "bies",
                     Claims = new List<Claim>
                     {
-                        new Claim(JwtClaimTypes.GivenName, "Mehmet"),
-                        new Claim(JwtClaimTypes.FamilyName, "Demirci")
+                        new Claim(JwtClaimTypes.GivenName, "bies"),
+                        new Claim(JwtClaimTypes.FamilyName, "wwwe"),
+                        new Claim(JwtClaimTypes.Address, "aaaaaaaaaaaa")
+                    }
+                }, 
+                new TestUser
+                {
+                    SubjectId = "5555AAE-DACB-42FE-A466-3B045B6AFF51",
+                    Username = "sean",
+                    Password = "sean",
+                    Claims = new List<Claim>
+                    {
+                        new Claim(JwtClaimTypes.GivenName, "sean"),
+                        new Claim(JwtClaimTypes.FamilyName, "chu"),
+                        new Claim(JwtClaimTypes.Address, "6666")
                     }
                 }
             };

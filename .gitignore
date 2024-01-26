@@ -18,3 +18,11 @@ src/Services/Movies/Movies.API/obj/
 src/Services/IdentityServer/IdentityServer/bin/
 
 src/Services/IdentityServer/IdentityServer/obj/
+
+src/Movies.Client/bin/
+
+src/Movies.Client/obj/
+
+src/Services/Movies/Movies.Client/bin/
+
+src/Services/Movies/Movies.Client/obj/

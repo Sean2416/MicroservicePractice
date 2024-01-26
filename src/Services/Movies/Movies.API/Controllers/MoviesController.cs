@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Movies.API.Controllers
 {
     [ApiController]
-    [Authorize("ClientIdPolicy")]
+    [Authorize("APIScopePolicy")]
     [Route("api/[controller]")]
     public class MoviesController : ControllerBase
     {
@@ -22,6 +22,8 @@ namespace Movies.API.Controllers
         [ProducesResponseType(typeof(Movie), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<List<Movie>>> GetAllMovie()
         {
+
+            var user = new JsonResult(from c in User.Claims select new { c.Type, c.Value });
 
             var movies = await _repository.GetAllMovies();
             return Ok(movies);

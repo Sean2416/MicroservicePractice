@@ -9,16 +9,17 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 //加入OAuth驗證
 builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options => {
-        options.Authority = "https://localhost:5005";
-        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-        {
-            ValidateAudience = false,
-        };        
-    });
+.AddJwtBearer("Bearer", options => {
+    options.Authority = "https://localhost:5006";
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateAudience = false,
+    };        
+});
+
 builder.Services.AddAuthorization(options => {
     //定義授權策略，Claims裡面的Client_id必須要為MovieClient才能使用
-    options.AddPolicy("ClientIdPolicy", policy=> policy.RequireClaim("client_id", "MovieClient"));
+    options.AddPolicy("APIScopePolicy", policy => policy.RequireClaim("scope", "MovieAPI"));
 });
 
 
