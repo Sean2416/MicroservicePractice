@@ -28,7 +28,8 @@ namespace IdentityServer
                         new Secret("clientsecret".Sha256())
                     },
                     ClientName = "Movies MVC Web App",
-                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    RequirePkce = false,
                     AllowRememberConsent=true,
                     RedirectUris = new List<string>()
                     {
@@ -66,7 +67,7 @@ namespace IdentityServer
             new List<ApiScope>
             {
                 new ApiScope("None", "None"),
-                new ApiScope("MovieAPI", "Movie API", userClaims: new[] { "role" })
+                new ApiScope("MovieAPI", "Movie API")
             };
 
         public static IEnumerable<ApiResource> ApiResources =>
@@ -87,6 +88,7 @@ namespace IdentityServer
                     {
                         new Claim(JwtClaimTypes.GivenName, "bies"),
                         new Claim(JwtClaimTypes.FamilyName, "wwwe"),
+                        new Claim(JwtClaimTypes.Email, "bies@aaa.con"),
                         new Claim(JwtClaimTypes.Address, "aaaaaaaaaaaa")
                     }
                 }, 
@@ -99,6 +101,7 @@ namespace IdentityServer
                     {
                         new Claim(JwtClaimTypes.GivenName, "sean"),
                         new Claim(JwtClaimTypes.FamilyName, "chu"),
+                        new Claim(JwtClaimTypes.Email, "sean@aaa.con"),
                         new Claim(JwtClaimTypes.Address, "6666")
                     }
                 }

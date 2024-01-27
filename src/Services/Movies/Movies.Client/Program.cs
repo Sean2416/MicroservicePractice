@@ -26,13 +26,13 @@ var builder = WebApplication.CreateBuilder(args);
         options.Authority = builder.Configuration.GetConnectionString("IdentityServer") ?? throw new Exception("IdentityServer connection string is missing");
         options.ClientId = "movies_mvc_client";
         options.ClientSecret = "clientsecret";
-        options.ResponseType = "code";
+        options.ResponseType = "code id_token";
 
         options.Scope.Add("openid");
         options.Scope.Add("profile");
         options.Scope.Add("address");
-        //options.Scope.Add("email");
-        //options.Scope.Add("roles");
+        options.Scope.Add("email");
+        options.Scope.Add("roles");
        // options.Scope.Add("offline_access"); // refresh token
 
         options.Scope.Add("MovieAPI");
@@ -53,6 +53,7 @@ var builder = WebApplication.CreateBuilder(args);
             RequireExpirationTime = true,
         };
     });
+
     builder.Services.AddAccessTokenManagement().ConfigureBackchannelHttpClient(); // TODO: add polly resilience policies for refresh token
     builder.Services.AddHttpContextAccessor();
 
