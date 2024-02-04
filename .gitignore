@@ -30,3 +30,7 @@ src/Services/Movies/Movies.Client/obj/
 src/Services/APIGetway/APIGetway/bin/
 
 src/Services/APIGetway/APIGetway/obj/
+
+src/Services/Security/WebApp_UnderTheHood/bin/
+
+src/Services/Security/WebApp_UnderTheHood/obj/
