@@ -43,6 +43,7 @@ var builder = WebApplication.CreateBuilder(args);
 
         options.SaveTokens = true;
 
+        //再取得Id_Token後，是否要直接至User Info Endpoint取得User Info
         options.GetClaimsFromUserInfoEndpoint = true;
 
         options.TokenValidationParameters = new()

@@ -26,3 +26,7 @@ src/Movies.Client/obj/
 src/Services/Movies/Movies.Client/bin/
 
 src/Services/Movies/Movies.Client/obj/
+
+src/Services/APIGetway/APIGetway/bin/
+
+src/Services/APIGetway/APIGetway/obj/

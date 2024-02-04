@@ -1,0 +1,38 @@
+{
+  "Routes": [
+    {
+      //外部對應路徑https://localhost:5010/movieapi/movies
+      "UpstreamPathTemplate": "/movieapi/movies",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": [ "MovieAPI" ]
+      },
+      //對應內部API實際位置
+      "DownstreamPathTemplate": "/api/movies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/movies/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/movieapi/movies/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": [ "MovieAPI" ]
+      }
+    }
+  ]
+}
