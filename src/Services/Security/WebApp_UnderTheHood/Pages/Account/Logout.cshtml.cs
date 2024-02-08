@@ -8,8 +8,8 @@ namespace WebApp_UnderTheHood.Pages.Account
     {
         public async Task<IActionResult> OnPostAsync()
         {
-            await HttpContext.SignOutAsync("MyCookieAuth");
-            return RedirectToPage("/Index");
+            await HttpContext.SignOutAsync("TestCookieAuth");
+            return RedirectToPage("/Account/Login");
         }
     }
 }

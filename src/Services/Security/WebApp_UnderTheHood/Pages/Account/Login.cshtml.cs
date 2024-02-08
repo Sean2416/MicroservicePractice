@@ -42,6 +42,26 @@ namespace WebApp_UnderTheHood.Pages.Account
 
                 return RedirectToPage("/Index");
             }
+            else if (Credential.UserName == "root" && Credential.Password == "root")
+            {
+                // Creating the security context
+                var claims = new List<Claim> {
+                    new Claim(ClaimTypes.Name, "root"),
+                    new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
+                    new Claim("Department", "RD"),
+                    new Claim("Admin", "true"),
+                    new Claim("EmploymentDate", "2023-01-01")
+                };
+
+                var identity = new ClaimsIdentity(claims, "TestCookieAuth");
+
+                await HttpContext.SignInAsync("TestCookieAuth", new(identity), new AuthenticationProperties
+                {
+                    IsPersistent = Credential.RememberMe
+                });
+
+                return RedirectToPage("/Index");
+            }
 
             return Page();
         }
