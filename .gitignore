@@ -42,3 +42,15 @@ src/Services/Security/Web API/obj/
 src/Services/Security/WebApp/bin/
 
 src/Services/Security/WebApp/obj/
+
+src/CoffeeDataAccess/bin/
+
+src/CoffeeDataAccess/obj/
+
+src/Services/IdentityServer/NewServer/bin/
+
+src/Services/IdentityServer/NewServer/obj/
+
+src/Services/Practice/CoffeeAPI/bin/
+
+src/Services/Practice/CoffeeAPI/obj/

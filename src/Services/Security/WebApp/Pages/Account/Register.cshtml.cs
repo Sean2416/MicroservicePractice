@@ -37,7 +37,9 @@ namespace WebApp.Pages.Account
             var user = new User
             {
                 Email = RegisterViewModel.Email,
-                UserName = RegisterViewModel.Email,                
+                UserName = RegisterViewModel.Email,   
+                Department = RegisterViewModel.Department,
+                Position = RegisterViewModel.Position,
             };
 
             var claimDepartment = new Claim("Department", RegisterViewModel.Department);
