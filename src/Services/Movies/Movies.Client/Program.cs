@@ -25,14 +25,13 @@ var builder = WebApplication.CreateBuilder(args);
         // Note: these settings must match the application details, and preferably stored as secrets/configuration
         options.Authority = builder.Configuration.GetConnectionString("IdentityServer") ?? throw new Exception("IdentityServer connection string is missing");
         options.ClientId = "movies_mvc_client";
-        options.ClientSecret = "clientsecret";
-        options.ResponseType = "code id_token";
+        options.ClientSecret = "ClientSecret1";
+        options.ResponseType = "code";
 
         options.Scope.Add("openid");
         options.Scope.Add("profile");
-        options.Scope.Add("address");
         options.Scope.Add("email");
-        options.Scope.Add("roles");
+       // options.Scope.Add("roles");
        // options.Scope.Add("offline_access"); // refresh token
 
         options.Scope.Add("MovieAPI");

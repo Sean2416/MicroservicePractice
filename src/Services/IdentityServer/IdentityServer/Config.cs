@@ -25,7 +25,7 @@ namespace IdentityServer
                     ClientId = "movies_mvc_client",
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret("clientsecret".Sha256())
+                        new Secret("ClientSecret1".Sha256())
                     },
                     ClientName = "Movies MVC Web App",
                     AllowedGrantTypes = GrantTypes.Hybrid,

@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeDataAccess", "CoffeeD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewServer", "Services\IdentityServer\NewServer\NewServer.csproj", "{2828905C-CA7A-472E-AFAC-E3C4B410951D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeClient", "Services\Practice\CoffeeClient\CoffeeClient.csproj", "{F69C726A-C025-489A-9045-2E9B85108509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{2828905C-CA7A-472E-AFAC-E3C4B410951D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2828905C-CA7A-472E-AFAC-E3C4B410951D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2828905C-CA7A-472E-AFAC-E3C4B410951D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69C726A-C025-489A-9045-2E9B85108509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69C726A-C025-489A-9045-2E9B85108509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69C726A-C025-489A-9045-2E9B85108509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69C726A-C025-489A-9045-2E9B85108509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{4A984DEA-0400-4B63-8098-0979512B3AA9} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
 		{E489062C-BA98-495A-A107-1A5213EB55B8} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
 		{2828905C-CA7A-472E-AFAC-E3C4B410951D} = {7AA406D6-6595-4F7D-98C8-D72AD01CB35F}
+		{F69C726A-C025-489A-9045-2E9B85108509} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41537828-7056-48CF-8E18-E7DD73374EAB}

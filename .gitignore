@@ -54,3 +54,7 @@ src/Services/IdentityServer/NewServer/obj/
 src/Services/Practice/CoffeeAPI/bin/
 
 src/Services/Practice/CoffeeAPI/obj/
+
+src/Services/Practice/CoffeeClient/bin/
+
+src/Services/Practice/CoffeeClient/obj/

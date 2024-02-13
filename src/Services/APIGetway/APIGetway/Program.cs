@@ -9,7 +9,7 @@ builder.Configuration.AddJsonFile("ocelot.json", false, true);
 builder.Services.AddAuthentication()
     .AddJwtBearer("TestKey", options =>
     {
-        options.Authority = "https://localhost:5006";
+        options.Authority = "https://localhost:5443";
         options.TokenValidationParameters.ValidateAudience = false;
     });
 

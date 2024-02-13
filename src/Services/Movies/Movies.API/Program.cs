@@ -10,7 +10,7 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 //¥[¤JOAuthÅçÃÒ
 builder.Services.AddAuthentication("Bearer")
 .AddJwtBearer("Bearer", options => {
-    options.Authority = "https://localhost:5006";
+    options.Authority = "https://localhost:5443";
     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
         ValidateAudience = false,
