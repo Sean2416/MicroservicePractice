@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NewServer.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,14 +35,14 @@ namespace IdentityServerHost.Quickstart.UI
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
-		private readonly SignInManager<IdentityUser> _signInManager;
+		private readonly SignInManager<ApplicationUser> _signInManager;
 
 		public AccountController(
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<ApplicationUser> signInManager)
         {
 
             _interaction = interaction;
