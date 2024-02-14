@@ -2,6 +2,24 @@
   "Routes": [
     {
       //外部對應路徑https://localhost:5010/movieapi/movies
+      "UpstreamPathTemplate": "/coffeeapi/shop",
+      "UpstreamHttpMethod": [ "GET"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": [ "CoffeeAPI.read" ]
+      },
+      //對應內部API實際位置
+      "DownstreamPathTemplate": "/api/CoffeeShop",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5445
+        }
+      ]
+    },
+    {
+      //外部對應路徑https://localhost:5010/movieapi/movies
       "UpstreamPathTemplate": "/movieapi/movies",
       "UpstreamHttpMethod": [ "GET", "POST" ],
       "AuthenticationOptions": {

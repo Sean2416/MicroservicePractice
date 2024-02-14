@@ -3,21 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using NewServer.Data;
 using NewServer;
 
-var seed = args.Contains("/seed");
-if (seed)
-{
-    args = args.Except(new[] { "/seed" }).ToArray();
-}
 
 var builder = WebApplication.CreateBuilder(args);
 
 var assembly = typeof(Program).Assembly.GetName().Name;
 var defaultConnString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-if (seed)
-{
-    SeedData.EnsureSeedData(defaultConnString);
-}
 
 builder.Services.AddDbContext<AspNetIdentityDbContext>(options =>
     options.UseSqlServer(defaultConnString,
