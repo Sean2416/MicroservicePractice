@@ -4,6 +4,9 @@ using NewServer.Data;
 using NewServer;
 using IdentityServer4.Configuration;
 using IdentityServer4;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +54,19 @@ builder.Services.AddAuthentication()
         googleOptions.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
         googleOptions.ClientId = "474316682203-bm7eh846qfm6kc2qs1e2uqm76bjso97b.apps.googleusercontent.com";
         googleOptions.ClientSecret = "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";
+    })
+.AddLine(options =>
+{
+     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+        options.Scope.Add("real_name");
+        options.Scope.Add("gender");
+        options.Scope.Add("birthdate");
+        options.Scope.Add("address");
+        options.Scope.Add("phone");
+        options.Scope.Add("email");
+        options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+        options.ClientId = "2003601821";
+        options.ClientSecret = "f67d1c3871877619e842cb20c8f2db3e";
     });
 
 builder.Services.AddControllersWithViews();

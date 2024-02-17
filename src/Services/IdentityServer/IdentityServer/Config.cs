@@ -29,6 +29,7 @@ namespace IdentityServer
                     },
                     ClientName = "Movies MVC Web App",
                     AllowedGrantTypes = GrantTypes.Hybrid,
+                    RequireConsent= false,
                     RequirePkce = false,
                     AllowRememberConsent=true,
                     RedirectUris = new List<string>()

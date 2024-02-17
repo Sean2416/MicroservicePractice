@@ -182,10 +182,6 @@ namespace IdentityServerHost.Quickstart.UI
             // create a list of claims that we want to transfer into our store
             var filtered = new List<Claim>();
 
-            var first = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.GivenName)?.Value ??
-                claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName)?.Value;
-            var last = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.FamilyName)?.Value ??
-                claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname)?.Value;
 
             // user's display name
             var name = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Name)?.Value ??
@@ -196,6 +192,10 @@ namespace IdentityServerHost.Quickstart.UI
             }
             else
             {
+                var first = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.GivenName)?.Value ??
+                    claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName)?.Value;
+                var last = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.FamilyName)?.Value ??
+                    claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname)?.Value;
                 if (first != null && last != null)
                 {
                     filtered.Add(new Claim(JwtClaimTypes.Name, first + " " + last));
@@ -225,7 +225,7 @@ namespace IdentityServerHost.Quickstart.UI
             {
                 user = new ApplicationUser
                 {
-                    UserName = $"{first}_{last}",
+                    UserName = email,
                     Email = email,
                     ProviderSubjectId = providerUserId,
                     ProviderName = provider,
