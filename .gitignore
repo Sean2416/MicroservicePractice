@@ -58,3 +58,7 @@ src/Services/Practice/CoffeeAPI/obj/
 src/Services/Practice/CoffeeClient/bin/
 
 src/Services/Practice/CoffeeClient/obj/
+
+src/Services/Practice/TestAPI/bin/
+
+src/Services/Practice/TestAPI/obj/
