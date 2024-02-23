@@ -22,6 +22,41 @@ namespace IdentityServer
                 },
                 new Client
                 {
+                    ClientName = "vuejs_code_client",
+                    ClientId = "vuejs_code_client",
+                    ClientSecrets = { new Secret("ClientSecret1".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.Code,
+                     RedirectUris = new List<string>
+                    {
+                        "https://localhost:44357",
+                        "https://localhost:44357/callback.html",
+                        "https://localhost:44357/silent-renew.html"
+                    },
+                      PostLogoutRedirectUris = new List<string>
+                    {
+                        "https://localhost:44357/",
+                        "https://localhost:44357"
+                    },
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        "https://localhost:44357"
+                    },
+                    AllowOfflineAccess = true,
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "roles",
+                        "MovieAPI"
+                    },
+                    RequireClientSecret = false,
+                    RequirePkce = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+                },
+                new Client
+                {
                     ClientId = "movies_mvc_client",
                     ClientSecrets = new List<Secret>
                     {
