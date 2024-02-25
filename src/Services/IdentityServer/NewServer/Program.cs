@@ -13,6 +13,21 @@ var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly.GetName().Name;
 var defaultConnString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder
+                .AllowCredentials()
+                .WithOrigins("https://localhost:44357")
+                .SetIsOriginAllowedToAllowWildcardSubdomains()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
+
 builder.Services.AddDbContext<AspNetIdentityDbContext>(options =>
     options.UseSqlServer(defaultConnString,
         b => b.MigrationsAssembly(assembly)));
@@ -73,6 +88,7 @@ builder.Services.AddControllersWithViews();
 
 
 var app = builder.Build();
+app.UseCors("AllowAllOrigins");
 app.UseStaticFiles();
 app.UseRouting();
 

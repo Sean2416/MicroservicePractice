@@ -10,7 +10,7 @@
 
         <div v-if='dataEventRecordsItems && dataEventRecordsItems.length'>
             <div v-for='dataEventRecordsItem of dataEventRecordsItems'>
-                <p><em>Id:</em> {{dataEventRecordsItem.id}} <em>Details:</em> {{dataEventRecordsItem.name}}  - {{dataEventRecordsItem.description}} - {{dataEventRecordsItem.timestamp}}</p>
+                <p><em>Id:</em> {{dataEventRecordsItem.id}} <em>Details:</em> {{dataEventRecordsItem.name}}  - {{dataEventRecordsItem.address}} - {{dataEventRecordsItem.openingHours}}</p>
             </div>
             <br />
         </div>
@@ -65,7 +65,7 @@
             auth.getAccessToken().then((userToken: string) => {
                 axios.defaults.headers.common[authorizationHeader] = `Bearer ${userToken}`;
 
-                axios.get('https://localhost:44355/api/DataEventRecords/')
+                axios.get('https://localhost:5010/coffeeapi/shop')
                     .then((response: any) => {
                         this.dataEventRecordsItems = response.data;
                     })

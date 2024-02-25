@@ -4,7 +4,7 @@ export default class AuthService {
     private userManager: UserManager;
 
     constructor() {
-        const STS_DOMAIN: string = 'https://localhost:44356';
+        const STS_DOMAIN: string = 'https://localhost:5443';
 
         const settings: any = {
             userStore: new WebStorageStateStore({ store: window.localStorage }),
@@ -14,7 +14,7 @@ export default class AuthService {
             automaticSilentRenew: true,
             silent_redirect_uri: 'https://localhost:44357/silent-renew.html',
             response_type: 'code',
-            scope: 'openid profile dataEventRecords',
+            scope: 'openid profile MovieAPI CoffeeAPI.read',
             post_logout_redirect_uri: 'https://localhost:44357/',
             filterProtocolClaims: true,
         };
