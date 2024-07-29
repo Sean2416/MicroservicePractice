@@ -62,3 +62,9 @@ src/Services/Practice/CoffeeClient/obj/
 src/Services/Practice/TestAPI/bin/
 
 src/Services/Practice/TestAPI/obj/
+
+src/NetCore8/bin/Debug/
+
+src/NetCore8/obj/Debug/
+
+src/NetCore8/obj/

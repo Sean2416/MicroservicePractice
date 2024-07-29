@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewServer", "Services\Ident
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeClient", "Services\Practice\CoffeeClient\CoffeeClient.csproj", "{F69C726A-C025-489A-9045-2E9B85108509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "Services\Practice\TestAPI\TestAPI.csproj", "{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAPI", "Services\Practice\TestAPI\TestAPI.csproj", "{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore8", "NetCore8\NetCore8.csproj", "{1B1067A0-19B9-4DC9-8256-12990438F7E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1067A0-19B9-4DC9-8256-12990438F7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1067A0-19B9-4DC9-8256-12990438F7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1067A0-19B9-4DC9-8256-12990438F7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1067A0-19B9-4DC9-8256-12990438F7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +151,7 @@ Global
 		{2828905C-CA7A-472E-AFAC-E3C4B410951D} = {7AA406D6-6595-4F7D-98C8-D72AD01CB35F}
 		{F69C726A-C025-489A-9045-2E9B85108509} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
 		{7A8C11AD-DDB7-4E76-86D1-1E99FB5B8A58} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
+		{1B1067A0-19B9-4DC9-8256-12990438F7E7} = {CEA9F524-5CD9-4CEF-B03E-1C216340ABA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41537828-7056-48CF-8E18-E7DD73374EAB}
